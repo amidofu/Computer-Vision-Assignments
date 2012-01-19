@@ -1,0 +1,29 @@
+1.
+[x,y,z] = sphere;
+x=x+3;
+z=z-2;
+f=5;
+K=[f,0,0;0,f,0;0,0,1];
+PI=[eye(3) zeros(3,1)];
+IMG=K*PI*[x(:)';y(:)';z(:)';ones(1,21*21)];
+a=IMG(1,:)./IMG(3,:);
+b=IMG(2,:)./IMG(3,:);
+scatter(a,b);
+axis equal
+
+
+
+3.
+Pt1=[8,6,1];
+Pt2=[4,2,1];
+Pt3=[3,7,1];
+Pt4=[6,8,1];
+L1=cross(Pt1,Pt2);
+L2=cross(Pt3,Pt4);
+VP1=cross(L1,L2);
+VP1=VP1/VP1(1,3)
+L3=cross(Pt1,Pt4);
+L4=cross(Pt2,Pt3);
+VP2=cross(L3,L4);
+VP2=VP2/VP2(1,3)
+Horizon=cross(VP1,VP2)

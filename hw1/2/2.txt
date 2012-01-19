@@ -1,0 +1,4 @@
+2(a)
+I = imread('pout.tif');
+imshow(I)
+Pts=CollectPts(1)

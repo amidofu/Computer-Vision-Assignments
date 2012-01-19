@@ -1,0 +1,50 @@
+%7(b)
+
+ox=3;
+oy=4;
+fsx=2;
+fsy=1;
+fstheta=0;
+
+axis1=[6,2,4]';% rotation axis
+theta1=5; % rotation angle
+trans1=[9,6,8]';% translation
+g1=CreateG(theta1,axis1,trans1);
+pi1=CreateProjMatrix(ox,oy,fsx,fsy,fstheta,g1);
+size=11;
+depth1=6;
+
+[x,y]=ProjGrid(size,depth1,pi1);
+scatter(x,y);
+
+axis2=[3,1,5]';% rotation axis
+theta2=10; % rotation angle
+trans2=[1,2,0]';% translation
+g2=CreateG(theta2,axis2,trans2);
+pi2=CreateProjMatrix(ox,oy,fsx,fsy,fstheta,g2);
+size=11;
+depth2=2;
+
+[x,y]=ProjGrid(size,depth2,pi2);
+scatter(x,y);
+
+axis3=[4,0,1]';% rotation axis
+theta3=8; % rotation angle
+trans3=[2,9,1]';% translation
+g3=CreateG(theta3,axis3,trans3);
+pi3=CreateProjMatrix(ox,oy,fsx,fsy,fstheta,g3);
+size=11;
+depth3=8;
+
+[x,y]=ProjGrid(size,depth3,pi3);
+scatter(x,y);
+
+%7(c)
+img=imread('koei.jpg');
+%img=imread('logo.tif');
+[m,n,b]=ProjGridPic2(11,img,10000,pi1);
+
+[m,n,b]=ProjGridPic(11,img,depth2,pi2);
+
+[m,n,b]=ProjGridPic(11,img,depth3,pi3);
+
