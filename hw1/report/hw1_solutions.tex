@@ -212,9 +212,58 @@ If the line connecting the sphere center and the pinhole is perpendicular to the
 \end{homeworkProblem}
 
 \begin{homeworkProblem} [2.]
-
+\matlabscript{../2/CollectPts}{Collect the coordinates of $n$ hand-clicked points on an image. }
+\matlabscript{../2/PlotHomo}{Draw a line with homogeneous coordinates. }
 \end{homeworkProblem}
 
+\begin{homeworkProblem} [3.]
+\begin{homeworkSection}{(a)}
+The homogeneous coordinates of the four points are
+\begin{align*}
+\boldsymbol{a} &= (6,8,1)^T \\
+\boldsymbol{b} &= (3,7,1)^T \\
+\boldsymbol{c} &= (4,2,1)^T \\
+\boldsymbol{d} &= (8,6,1)^T.
+\end{align*}
+The homogeneous coordinates of the four edges are
+\begin{align*}
+\boldsymbol{l_1} &= \boldsymbol{a} \times \boldsymbol{b} = (0.0556, -0.1667, 1)^T \\
+\boldsymbol{l_2} &= \boldsymbol{b} \times \boldsymbol{c} = (-0.2273, -0.0455, 1)^T \\
+\boldsymbol{l_3} &= \boldsymbol{c} \times \boldsymbol{d} = (-0.5, 0.5, 1)^T \\
+\boldsymbol{l_4} &= \boldsymbol{d} \times \boldsymbol{a} = (-0.0714, -0.0714, 1)^T. \\
+\end{align*}
+The two vanishing points are
+\begin{align*}
+\boldsymbol{v_1} &= \boldsymbol{l_1} \times \boldsymbol{l_3} = (12, 10, 1)^T \\
+\boldsymbol{v_2} &= \boldsymbol{l_2} \times \boldsymbol{l_4} = (2, 12, 1)^T. 
+\end{align*}
+\end{homeworkSection}
+
+\begin{homeworkSection}{(b)}
+The homogenous coordinates for the horizon line is 
+\[
+\boldsymbol{h} = \boldsymbol{v_1} \times \boldsymbol{v_2} = (-0.0161, -0.0806, 1)
+\]
+Therefore its expression is
+\[
+-0.0161x - 0.0806y + z = 0
+\]
+\end{homeworkSection}
+\end{homeworkProblem}
+
+\begin{homeworkProblem}[4.]
+\end{homeworkProblem}
+\begin{homeworkSection}{(a)}
+Let $\omega' = \theta \omega$.  According to the formula given by Logarithm of $SO(3)$
+\begin{align*}
+\theta = ||\omega'|| &= \cos^{-1}\left(\cfrac{\text{tr}(R)-1}{2}\right) \\
+  &= cos^{-1}\left(\cfrac{0.1729 * 3 - 1}{2}\right) \\
+  &= 1.8138 \\
+\omega = \cfrac{\omega'}{||\omega'||} &= \cfrac{1}{2\sin(\theta)} \begin{bmatrix}r_{32} - r_{23}\\r_{13} - r_{31}\\r_{21} - r_{12}\end{bmatrix}\\
+  &= \cfrac{1}{2\sin(\theta)} \begin{bmatrix}0.9739 + 0.1468\\0.9739 + 0.1468\\0.9739 + 0.1468\end{bmatrix}\\
+  &= (0.5773, 0.5773, 0.5773)^T
+\end{align*}
+\end{homeworkSection}
 \end{spacing}
 \end{document}
 
