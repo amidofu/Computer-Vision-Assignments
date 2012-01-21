@@ -7,7 +7,9 @@ fsy=1;
 fstheta=0;
 
 axis1=[6,2,4]';% rotation axis
+%axis1=[0,0,1]';
 theta1=5; % rotation angle
+%theta1=asin(1);
 trans1=[9,6,8]';% translation
 g1=CreateG(theta1,axis1,trans1);
 pi1=CreateProjMatrix(ox,oy,fsx,fsy,fstheta,g1);
@@ -44,7 +46,7 @@ img=imread('koei.jpg');
 %img=imread('logo.tif');
 [m,n,b]=ProjGridPic2(11,img,10000,pi1);
 
-[m,n,b]=ProjGridPic(11,img,depth2,pi2);
+[m,n,b]=ProjGridPic2(11,img,depth2,pi2);
 
-[m,n,b]=ProjGridPic(11,img,depth3,pi3);
+[m,n,b]=ProjGridPic2(11,img,depth3,pi3);
 
